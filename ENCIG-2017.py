@@ -108,7 +108,7 @@ with col2:
 	fig.update_traces(marker_color = 'steelblue', marker_line_color = 'slategray', marker_line_width = 1.5, opacity = 0.6)
 	st.plotly_chart(fig) # satisfacción general con los servicios básicos
 
-barplot_corruption_services = pd.read_csv('streamlit/barplot_corruption_services.csv')
+barplot_corruption_services = pd.read_csv('barplot_corruption_services.csv')
 
 fig = go.Figure()
 fig.add_trace(go.Bar(
