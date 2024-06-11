@@ -21,7 +21,7 @@ import streamlit as st
 #alt.data_transformers.enable("vegafusion") # habilita el transformador de datos 'vegafusion' para trabajar con conjuntos de datos >5000 filas
 
 st.set_page_config(page_title = 'ENCIG-2017', page_icon = 'Active', layout = 'wide') # streamlit configuracion
-path = '/home/aspphem/Desktop/MCE/streamlit/CIMAT.png'
+path = 'streamlit/CIMAT.png'
 st.image(path, width=100) # logo CIMAT
 
 st.title("Encuesta Nacional de Calidad e Impacto Gubernamental (ENCIG) 2017") # streamlit titulo
@@ -29,7 +29,7 @@ st.subheader("Centro de Investigación en Matemáticas, A.C.") # streamlit subti
 st.markdown('<style>div.block-container{padding-top:1rem}</style>',unsafe_allow_html = True)
 tabs = st.tabs(['Principales Resultados'])
 
-frecuency_by_states = pd.read_csv('frecuency_by_states.csv')
+frecuency_by_states = pd.read_csv('streamlit/frecuency_by_states.csv')
 
 st.write("# Percepción de la Ocurrencia de las Principales Problemáticas en la República Mexicana") 
 
@@ -66,8 +66,8 @@ st.write("## Nivel de Percepción de la Corrupción por Entidad Federativa")
 
 geographical_data_mx = geopandas.read_file("https://gist.githubusercontent.com/walkerke/76cb8cc5f949432f9555/raw/363c297ce82a4dcb9bdf003d82aa4f64bc695cf1/mx.geojson")
 
-corruption_map = pd.read_csv('corruption_map.csv')
-barplot_corruption = pd.read_csv('barplot_corruption.csv')
+corruption_map = pd.read_csv('streamlit/corruption_map.csv')
+barplot_corruption = pd.read_csv('streamlit/barplot_corruption.csv')
 
 geographical_data_mx['state'] = geographical_data_mx['state'].replace({'Aguascalientes': 'AGS', 'Baja California': 'BC', 'Baja California Sur': 'BCS', 'Campeche': 'CAMP', 'Coahuila de Zaragoza': 'COAH', 'Colima': 'COL', 'Chiapas': 'CHIS', 'Chihuahua': 'CHIH', 'Ciudad de México': 'CDMX', 'Durango': 'DGO', 'Guanajuato': 'GTO', 'Guerrero': 'GRO', 'Hidalgo': 'HGO', 'Jalisco': 'JAL', 'México': 'MEX', 'Michoacán de Ocampo': 'MICH', 'Morelos': 'MOR', 'Nayarit': 'NAY', 'Nuevo León': 'NL', 'Oaxaca': 'OAX', 'Puebla': 'PUE', 'Querétaro': 'QRO', 'Quintana Roo': 'QR', 'San Luis Potosí': 'SLP', 'Sinaloa': 'SIN', 'Sonora': 'SON', 'Tabasco': 'TAB', 'Tamaulipas': 'TAM', 'Tlaxcala': 'TLAX', 'Veracruz de Ignacio de la Llave': 'VER', 'Yucatán': 'YUC', 'Zacatecas': 'ZAC'}) # abreviación de los nombres de las entidades federativas para garantizar compatibilidad entre los conjuntos de datos
 
@@ -89,8 +89,8 @@ with col2:
 
 st.write("## Nivel de Satisfacción General con los Servicios Básicos por Entidad Federativa") 
 
-services_satisfaction_map = pd.read_csv('services_satisfaction_map.csv')
-barplot_services = pd.read_csv('barplot_services.csv')
+services_satisfaction_map = pd.read_csv('streamlit/services_satisfaction_map.csv')
+barplot_services = pd.read_csv('streamlit/barplot_services.csv')
 
 geographical_data_mx['percent2'] = services_satisfaction_map['percent']
 
@@ -108,7 +108,7 @@ with col2:
 	fig.update_traces(marker_color = 'steelblue', marker_line_color = 'slategray', marker_line_width = 1.5, opacity = 0.6)
 	st.plotly_chart(fig) # satisfacción general con los servicios básicos
 
-barplot_corruption_services = pd.read_csv('barplot_corruption_services.csv')
+barplot_corruption_services = pd.read_csv('streamlit/barplot_corruption_services.csv')
 
 fig = go.Figure()
 fig.add_trace(go.Bar(
@@ -139,7 +139,7 @@ st.plotly_chart(fig)
 
 st.write("# Experiencias con Pagos, Trámites y Solicitudes de Servicios Públicos")
 
-contingency_table_issues_related_services = pd.read_csv('contingency_table_issues_related_services.csv')
+contingency_table_issues_related_services = pd.read_csv('streamlit/contingency_table_issues_related_services.csv')
 
 colors = ['lightslategray'] * 11
 colors[0] = 'brown'
@@ -161,7 +161,7 @@ st.plotly_chart(fig)
 
 st.write("## Problemas en el Pago, Trámite o Solicitud de Servicios de Salud")
 
-contingency_table_health_services_updated = pd.read_csv('contingency_table_health_services_updated.csv')
+contingency_table_health_services_updated = pd.read_csv('streamlit/contingency_table_health_services_updated.csv')
 
 colors = ['lightslategray'] * 11
 colors[0] = 'brown'
