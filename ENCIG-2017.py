@@ -2,6 +2,10 @@
 
 # Centro de Investigación en Matemáticas - Maestría en Cómputo Estadístico
 
+	# Link generado por streamlit - https://encig-2017.streamlit.app/
+
+# Ultima actualizacion - Junio 2024
+
 import squarify
 import geopandas
 
@@ -178,4 +182,3 @@ fig.update_layout(barmode = 'group', bargroupgap = 0.10, bargap = 0.20)
 bargroupgap=0.1
 
 st.plotly_chart(fig) # problemas en el pago, trámite o solicitud de servicios de salud
-
