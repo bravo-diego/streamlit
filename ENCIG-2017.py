@@ -21,7 +21,7 @@ import streamlit as st
 #alt.data_transformers.enable("vegafusion") # habilita el transformador de datos 'vegafusion' para trabajar con conjuntos de datos >5000 filas
 
 st.set_page_config(page_title = 'ENCIG-2017', page_icon = 'Active', layout = 'wide') # streamlit configuracion
-path = 'streamlit/CIMAT.png'
+path = 'CIMAT.png'
 st.image(path, width=100) # logo CIMAT
 
 st.title("Encuesta Nacional de Calidad e Impacto Gubernamental (ENCIG) 2017") # streamlit titulo
